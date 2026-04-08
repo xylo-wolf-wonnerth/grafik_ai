@@ -33,24 +33,24 @@
         bereich: "A – Analyse & Grundlagen",
         color: "#2D6A4F",
         tasks: [
-          { id: 1, name: "Architekturpläne sichten, bereinigen, lesbar machen", zeit: "2–6 h", fehler: "mittel", note: "Pläne oft unvollständig/veraltet; DWG-Versionen inkompatibel" },
-          { id: 2, name: "Objektanalyse (Gebäudedaten, Materialien, Umfeld)", zeit: "1–3 h", fehler: "gering", note: "Recherche Website/Exposé/Bauherr" },
+          { id: 1, name: "Architekturpläne sichten, bereinigen, lesbar machen", zeit: "2–6 h", fehler: "mittel", note: "Pläne oft unvollständig/veraltet; DWG-Versionen inkompatibel", comw: "Welche Tools werden normalerweise verwendet? Wenn AutoCAD, wäre dann nicht AutoLISP + Autdesk AI eine Option?" },
+          { id: 2, name: "Objektanalyse (Gebäudedaten, Materialien, Umfeld)", zeit: "1–3 h", fehler: "gering", note: "Recherche Website/Exposé/Bauherr", comw: "Prompt-Template 'Objektsteckbrief erzeugen' via MS Copilot Agent (ist in unserer Lizenz inkludiert)" },
           { id: 3, name: "Bedarfsanalyse Nutzer & Wegführung", zeit: "4–8 h", fehler: "mittel", note: "Quell-/Ziel-/Leitpunkte; oft unklare Mietflächenaufteilung" },
-          { id: 4, name: "Nomenklatur entwickeln (Räume, Etagen, Sprachen)", zeit: "2–4 h", fehler: "hoch", note: "Abstimmung mit Bauherr; Änderungen kommen spät" },
+          { id: 4, name: "Nomenklatur entwickeln (Räume, Etagen, Sprachen)", zeit: "2–4 h", fehler: "hoch", note: "Abstimmung mit Bauherr; Änderungen kommen spät", comw: "Excel + Copilot Add-on (\"Nomenklatur-Prompt\"" },
           { id: 5, name: "Leitstrategie erarbeiten (Wegführungsplan)", zeit: "4–8 h", fehler: "mittel", note: "Abhängig von Planqualität" },
           { id: 6, name: "Basiselemente definieren (Schildertypen, Größen)", zeit: "2–4 h", fehler: "gering", note: "Auf Basis bestehender Produktlinien" },
-          { id: 7, name: "Mieterlisten / Nutzerlisten aufbereiten", zeit: "1–2 h", fehler: "hoch", note: "Daten oft unvollständig; ständige Änderungen" },
+          { id: 7, name: "Mieterlisten / Nutzerlisten aufbereiten", zeit: "1–2 h", fehler: "hoch", note: "Daten oft unvollständig; ständige Änderungen", comw: "Excel + KI-Cleanup via Copilot Add-on" },
         ],
       },
       {
         bereich: "B – Kreation & Konzept",
         color: "#9B2226",
         tasks: [
-          { id: 8, name: "Moodboard / Stimmungsbilder erstellen", zeit: "2–4 h", fehler: "gering", note: "Materialrecherche, Referenzbilder, Farbwelten" },
-          { id: 9, name: "Designlinie entwickeln (Typo, Farbe, Form)", zeit: "8–20 h", fehler: "gering", note: "Kernleistung; mehrere Iterationen" },
-          { id: 10, name: "Piktogramm-System entwickeln / auswählen", zeit: "4–10 h", fehler: "gering", note: "Custom oder Anpassung bestehender Sets" },
+          { id: 8, name: "Moodboard / Stimmungsbilder erstellen", zeit: "2–4 h", fehler: "gering", note: "Materialrecherche, Referenzbilder, Farbwelten", comw: "Datenbank vorliegend? Kombination aus Tags f Referenz + anschließender Input in Adobe Firefly Moodboard Generator?" },
+          { id: 9, name: "Designlinie entwickeln (Typo, Farbe, Form)", zeit: "8–20 h", fehler: "gering", note: "Kernleistung; mehrere Iterationen", comw: "Adobe Illustrator mit generativen Funktionen (Recolor, Style Transfer)?" },
+          { id: 10, name: "Piktogramm-System entwickeln / auswählen", zeit: "4–10 h", fehler: "gering", note: "Custom oder Anpassung bestehender Sets" , comw: "Adobe Illustrator + generatives Recoloring?"},
           { id: 11, name: "Schildertypen gestalten (Etage, Tür, Wegweiser, HNr…)", zeit: "8–16 h", fehler: "mittel", note: "Je Typ 1–3 h; viele Varianten" },
-          { id: 12, name: "Varianten ausarbeiten (V1/V2/V3)", zeit: "4–8 h", fehler: "gering", note: "Z. B. Mieterübersicht: Liste vs. Raster" },
+          { id: 12, name: "Varianten ausarbeiten (V1/V2/V3)", zeit: "4–8 h", fehler: "gering", note: "Z. B. Mieterübersicht: Liste vs. Raster", comw: "Core Template m Parentpages in Indesign + Data Merger f. Text- u Steuerfelder + Regel-Skript + 3 feste Varianten. Somit müsste man bei jeder neuen Konzeption nicht immer wieder neu beginnen, sondern man müsste nur leichte Anpassungen vornehmen." },
           { id: 13, name: "Material-/Farbkonzept (RAL, Folie, RIMEX…)", zeit: "2–4 h", fehler: "mittel", note: "Abstimmung mit Produktion; Farbabweichungen" },
         ],
       },
@@ -58,8 +58,8 @@
         bereich: "C – Verortung & Planung",
         color: "#005F73",
         tasks: [
-          { id: 14, name: "Verortungspläne erstellen (SignAgent / manuell)", zeit: "8–20 h", fehler: "hoch", note: "Jedes Schild auf Plan verorten; Änderungen = Dominoeffekt" },
-          { id: 15, name: "Mengenermittlung (Stückzahlen je Typ/Etage)", zeit: "2–4 h", fehler: "hoch", note: "Basis für Kalkulation; Fehler = Kostenrisiko" },
+          { id: 14, name: "Verortungspläne erstellen (SignAgent / manuell)", zeit: "8–20 h", fehler: "hoch", note: "Jedes Schild auf Plan verorten; Änderungen = Dominoeffekt", comw: "Inwiefern Domino-Effekt? SignAgent kann doch neue und alte Location Plans vergleichen und Unterschiede farblich isolieren, sofern Maßstab und Positionierung konsistent bleiben, oder nicht? KI-Stack hier zu hinterlegen ist nur maximal kompliziert möglich" },
+          { id: 15, name: "Mengenermittlung (Stückzahlen je Typ/Etage)", zeit: "2–4 h", fehler: "hoch", note: "Basis für Kalkulation; Fehler = Kostenrisiko", comw: "Baut doch auf den vorherigen Schritt auf und kann mittels Export relativ easy gelöst werden, oder nicht?" },
           { id: 16, name: "Werbeanlagen-Planung (Fassade + Logos)", zeit: "4–10 h", fehler: "mittel", note: "Fassadenansicht aufbauen, Logos platzieren" },
           { id: 17, name: "Maßketten & Vermaßung eintragen", zeit: "2–6 h", fehler: "hoch", note: "Produktionsrelevant; mm-genau" },
           { id: 18, name: "Sondergenehmigungsformulare vorbereiten", zeit: "1–2 h", fehler: "gering", note: "Bauanträge, Werbeanlagenformulare" },
@@ -218,6 +218,7 @@
                         <div>
                           <div style={{ fontWeight: 500, lineHeight: 1.35 }}>{task.name}</div>
                           <div style={{ fontSize: 11, opacity: 0.5, marginTop: 2, lineHeight: 1.3 }}>{task.note}</div>
+                          <div style={{ fontSize: 11, opacity: 0.5, marginTop: 2, lineHeight: 1.3 }}> <strong>Kommentar Wonnie:</strong>{task.comw}</div>
                         </div>
                         <div style={{ fontSize: 12, fontWeight: 500, opacity: 0.7, whiteSpace: "nowrap" }}>
                           {task.zeit}
