@@ -9,13 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; }
+
     body {
       margin: 0;
       background: #f0f0ee;
       min-height: 100vh;
       padding: 32px 16px;
+      font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
     }
-    button { font-family: inherit; }
+
+    button {
+      font-family: inherit;
+    }
   </style>
 </head>
 <body>
@@ -33,112 +38,386 @@
         bereich: "A – Analyse & Grundlagen",
         color: "#2D6A4F",
         tasks: [
-          { id: 1, name: "Architekturpläne sichten, bereinigen, lesbar machen", zeit: "2–6 h", fehler: "mittel", note: "Pläne oft unvollständig/veraltet; DWG-Versionen inkompatibel", comw: "Welche Tools werden normalerweise verwendet? Wenn AutoCAD, wäre dann nicht AutoLISP + Autdesk AI eine Option?" },
-          { id: 2, name: "Objektanalyse (Gebäudedaten, Materialien, Umfeld)", zeit: "1–3 h", fehler: "gering", note: "Recherche Website/Exposé/Bauherr", comw: "Prompt-Template 'Objektsteckbrief erzeugen' via MS Copilot Agent (ist in unserer Lizenz inkludiert)" },
-          { id: 3, name: "Bedarfsanalyse Nutzer & Wegführung", zeit: "4–8 h", fehler: "mittel", note: "Quell-/Ziel-/Leitpunkte; oft unklare Mietflächenaufteilung" },
-          { id: 4, name: "Nomenklatur entwickeln (Räume, Etagen, Sprachen)", zeit: "2–4 h", fehler: "hoch", note: "Abstimmung mit Bauherr; Änderungen kommen spät", comw: "Excel + Copilot Add-on (\"Nomenklatur-Prompt\"" },
-          { id: 5, name: "Leitstrategie erarbeiten (Wegführungsplan)", zeit: "4–8 h", fehler: "mittel", note: "Abhängig von Planqualität" },
-          { id: 6, name: "Basiselemente definieren (Schildertypen, Größen)", zeit: "2–4 h", fehler: "gering", note: "Auf Basis bestehender Produktlinien" },
-          { id: 7, name: "Mieterlisten / Nutzerlisten aufbereiten", zeit: "1–2 h", fehler: "hoch", note: "Daten oft unvollständig; ständige Änderungen", comw: "Excel + KI-Cleanup via Copilot Add-on" },
-        ],
+          {
+            id: 1,
+            name: "Architekturpläne sichten, bereinigen, lesbar machen",
+            zeit: "2–6 h",
+            fehler: "mittel",
+            note: "Pläne oft unvollständig/veraltet; DWG-Versionen inkompatibel",
+            comw: "Welche Tools werden normalerweise verwendet? Wenn AutoCAD, wäre dann nicht AutoLISP + Autodesk AI eine Option?"
+          },
+          {
+            id: 2,
+            name: "Objektanalyse (Gebäudedaten, Materialien, Umfeld)",
+            zeit: "1–3 h",
+            fehler: "gering",
+            note: "Recherche Website/Exposé/Bauherr",
+            comw: "Prompt-Template 'Objektsteckbrief erzeugen' via MS Copilot Agent (ist in unserer Lizenz inkludiert)"
+          },
+          {
+            id: 3,
+            name: "Bedarfsanalyse Nutzer & Wegführung",
+            zeit: "4–8 h",
+            fehler: "mittel",
+            note: "Quell-/Ziel-/Leitpunkte; oft unklare Mietflächenaufteilung"
+          },
+          {
+            id: 4,
+            name: "Nomenklatur entwickeln (Räume, Etagen, Sprachen)",
+            zeit: "2–4 h",
+            fehler: "hoch",
+            note: "Abstimmung mit Bauherr; Änderungen kommen spät",
+            comw: "Excel + Copilot Add-on (\"Nomenklatur-Prompt\")"
+          },
+          {
+            id: 5,
+            name: "Leitstrategie erarbeiten (Wegführungsplan)",
+            zeit: "4–8 h",
+            fehler: "mittel",
+            note: "Abhängig von Planqualität"
+          },
+          {
+            id: 6,
+            name: "Basiselemente definieren (Schildertypen, Größen)",
+            zeit: "2–4 h",
+            fehler: "gering",
+            note: "Auf Basis bestehender Produktlinien"
+          },
+          {
+            id: 7,
+            name: "Mieterlisten / Nutzerlisten aufbereiten",
+            zeit: "1–2 h",
+            fehler: "hoch",
+            note: "Daten oft unvollständig; ständige Änderungen",
+            comw: "Excel + KI-Cleanup via Copilot Add-on"
+          }
+        ]
       },
       {
         bereich: "B – Kreation & Konzept",
         color: "#9B2226",
         tasks: [
-          { id: 8, name: "Moodboard / Stimmungsbilder erstellen", zeit: "2–4 h", fehler: "gering", note: "Materialrecherche, Referenzbilder, Farbwelten", comw: "Datenbank vorliegend? Kombination aus Tags f Referenz + anschließender Input in Adobe Firefly Moodboard Generator?" },
-          { id: 9, name: "Designlinie entwickeln (Typo, Farbe, Form)", zeit: "8–20 h", fehler: "gering", note: "Kernleistung; mehrere Iterationen", comw: "Adobe Illustrator mit generativen Funktionen (Recolor, Style Transfer)?" },
-          { id: 10, name: "Piktogramm-System entwickeln / auswählen", zeit: "4–10 h", fehler: "gering", note: "Custom oder Anpassung bestehender Sets" , comw: "Adobe Illustrator + generatives Recoloring?"},
-          { id: 11, name: "Schildertypen gestalten (Etage, Tür, Wegweiser, HNr…)", zeit: "8–16 h", fehler: "mittel", note: "Je Typ 1–3 h; viele Varianten" },
-          { id: 12, name: "Varianten ausarbeiten (V1/V2/V3)", zeit: "4–8 h", fehler: "gering", note: "Z. B. Mieterübersicht: Liste vs. Raster", comw: "Core Template m Parentpages in Indesign + Data Merger f. Text- u Steuerfelder + Regel-Skript + 3 feste Varianten. Somit müsste man bei jeder neuen Konzeption nicht immer wieder neu beginnen, sondern man müsste nur leichte Anpassungen vornehmen." },
-          { id: 13, name: "Material-/Farbkonzept (RAL, Folie, RIMEX…)", zeit: "2–4 h", fehler: "mittel", note: "Abstimmung mit Produktion; Farbabweichungen" },
-        ],
+          {
+            id: 8,
+            name: "Moodboard / Stimmungsbilder erstellen",
+            zeit: "2–4 h",
+            fehler: "gering",
+            note: "Materialrecherche, Referenzbilder, Farbwelten",
+            comw: "Datenbank vorliegend? Kombination aus Tags für Referenz + anschließender Input in Adobe Firefly Moodboard Generator?"
+          },
+          {
+            id: 9,
+            name: "Designlinie entwickeln (Typo, Farbe, Form)",
+            zeit: "8–20 h",
+            fehler: "gering",
+            note: "Kernleistung; mehrere Iterationen",
+            comw: "Adobe Illustrator mit generativen Funktionen (Recolor, Style Transfer)?"
+          },
+          {
+            id: 10,
+            name: "Piktogramm-System entwickeln / auswählen",
+            zeit: "4–10 h",
+            fehler: "gering",
+            note: "Custom oder Anpassung bestehender Sets",
+            comw: "Adobe Illustrator + generatives Recoloring?"
+          },
+          {
+            id: 11,
+            name: "Schildertypen gestalten (Etage, Tür, Wegweiser, HNr…)",
+            zeit: "8–16 h",
+            fehler: "mittel",
+            note: "Je Typ 1–3 h; viele Varianten"
+          },
+          {
+            id: 12,
+            name: "Varianten ausarbeiten (V1/V2/V3)",
+            zeit: "4–8 h",
+            fehler: "gering",
+            note: "Z. B. Mieterübersicht: Liste vs. Raster",
+            comw: "Core Template mit Parent Pages in InDesign + Data Merge für Text- und Steuerfelder + Regel-Skript + 3 feste Varianten. Somit müsste man bei jeder neuen Konzeption nicht immer wieder neu beginnen, sondern nur leichte Anpassungen vornehmen."
+          },
+          {
+            id: 13,
+            name: "Material-/Farbkonzept (RAL, Folie, RIMEX…)",
+            zeit: "2–4 h",
+            fehler: "mittel",
+            note: "Abstimmung mit Produktion; Farbabweichungen"
+          }
+        ]
       },
       {
         bereich: "C – Verortung & Planung",
         color: "#005F73",
         tasks: [
-          { id: 14, name: "Verortungspläne erstellen (SignAgent / manuell)", zeit: "8–20 h", fehler: "hoch", note: "Jedes Schild auf Plan verorten; Änderungen = Dominoeffekt", comw: "Inwiefern Domino-Effekt? SignAgent kann doch neue und alte Location Plans vergleichen und Unterschiede farblich isolieren, sofern Maßstab und Positionierung konsistent bleiben, oder nicht? KI-Stack hier zu hinterlegen ist nur maximal kompliziert möglich" },
-          { id: 15, name: "Mengenermittlung (Stückzahlen je Typ/Etage)", zeit: "2–4 h", fehler: "hoch", note: "Basis für Kalkulation; Fehler = Kostenrisiko", comw: "Baut doch auf den vorherigen Schritt auf und kann mittels Export relativ easy gelöst werden, oder nicht?" },
-          { id: 16, name: "Werbeanlagen-Planung (Fassade + Logos)", zeit: "4–10 h", fehler: "mittel", note: "Fassadenansicht aufbauen, Logos platzieren" },
-          { id: 17, name: "Maßketten & Vermaßung eintragen", zeit: "2–6 h", fehler: "hoch", note: "Produktionsrelevant; mm-genau" },
-          { id: 18, name: "Sondergenehmigungsformulare vorbereiten", zeit: "1–2 h", fehler: "gering", note: "Bauanträge, Werbeanlagenformulare" },
-        ],
+          {
+            id: 14,
+            name: "Verortungspläne erstellen (SignAgent / manuell)",
+            zeit: "8–20 h",
+            fehler: "hoch",
+            note: "Jedes Schild auf Plan verorten; Änderungen = Dominoeffekt",
+            comw: "Inwiefern Domino-Effekt? SignAgent kann doch neue und alte Location Plans vergleichen und Unterschiede farblich isolieren, sofern Maßstab und Positionierung konsistent bleiben, oder nicht? KI-Stack hier zu hinterlegen ist nur maximal kompliziert möglich."
+          },
+          {
+            id: 15,
+            name: "Mengenermittlung (Stückzahlen je Typ/Etage)",
+            zeit: "2–4 h",
+            fehler: "hoch",
+            note: "Basis für Kalkulation; Fehler = Kostenrisiko",
+            comw: "Baut doch auf den vorherigen Schritt auf und kann mittels Export relativ easy gelöst werden, oder nicht?"
+          },
+          {
+            id: 16,
+            name: "Werbeanlagen-Planung (Fassade + Logos)",
+            zeit: "4–10 h",
+            fehler: "mittel",
+            note: "Fassadenansicht aufbauen, Logos platzieren"
+          },
+          {
+            id: 17,
+            name: "Maßketten & Vermaßung eintragen",
+            zeit: "2–6 h",
+            fehler: "hoch",
+            note: "Produktionsrelevant; mm-genau"
+          },
+          {
+            id: 18,
+            name: "Sondergenehmigungsformulare vorbereiten",
+            zeit: "1–2 h",
+            fehler: "gering",
+            note: "Bauanträge, Werbeanlagenformulare"
+          }
+        ]
       },
       {
         bereich: "D – Reinzeichnung & Produktion",
         color: "#6D3B47",
         tasks: [
-          { id: 19, name: "Schilderlayouts reinzeichnen (1:1, druckfertig)", zeit: "8–20 h", fehler: "hoch", note: "Maße, Materialangaben, Farben exakt" },
-          { id: 20, name: "Logos aufbereiten (beschaffen, vektorisieren)", zeit: "2–6 h", fehler: "mittel", note: "Mieter liefern oft nur JPG/PNG" },
-          { id: 21, name: "Druckdaten erstellen (Folie, UV, Emaille…)", zeit: "4–10 h", fehler: "hoch", note: "Farbprofile, Überdrucken, Stanzpfade" },
-          { id: 22, name: "Technische Details spezifizieren (Befestigung, LED…)", zeit: "2–4 h", fehler: "mittel", note: "Abstimmung mit Werkstatt/Montage" },
-          { id: 23, name: "Datenübergabe an Produktion", zeit: "1–2 h", fehler: "mittel", note: "Paket schnüren, Checkliste, Freigabe" },
-        ],
+          {
+            id: 19,
+            name: "Schilderlayouts reinzeichnen (1:1, druckfertig)",
+            zeit: "8–20 h",
+            fehler: "hoch",
+            note: "Maße, Materialangaben, Farben exakt"
+          },
+          {
+            id: 20,
+            name: "Logos aufbereiten (beschaffen, vektorisieren)",
+            zeit: "2–6 h",
+            fehler: "mittel",
+            note: "Mieter liefern oft nur JPG/PNG"
+          },
+          {
+            id: 21,
+            name: "Druckdaten erstellen (Folie, UV, Emaille…)",
+            zeit: "4–10 h",
+            fehler: "hoch",
+            note: "Farbprofile, Überdrucken, Stanzpfade"
+          },
+          {
+            id: 22,
+            name: "Technische Details spezifizieren (Befestigung, LED…)",
+            zeit: "2–4 h",
+            fehler: "mittel",
+            note: "Abstimmung mit Werkstatt/Montage"
+          },
+          {
+            id: 23,
+            name: "Datenübergabe an Produktion",
+            zeit: "1–2 h",
+            fehler: "mittel",
+            note: "Paket schnüren, Checkliste, Freigabe"
+          }
+        ]
       },
       {
         bereich: "E – Bildgenerierung & Visualisierung",
         color: "#774936",
         tasks: [
-          { id: 24, name: "Produktvisualisierungen (München®, Karlsruhe®, Fire Family®)", zeit: "2–8 h", fehler: "mittel", note: "Mockups, Szenenbilder; zunehmend KI-gestützt" },
-          { id: 25, name: "Werbeanlagen-Visualisierung (Leuchtbuchstaben in Fassade)", zeit: "4–10 h", fehler: "mittel", note: "Compositing oder 3D; Architekturkontext nötig" },
-          { id: 26, name: "Liftlanding-/Treppenhausszenen generieren", zeit: "2–6 h", fehler: "mittel", note: "Oft nur rudimentäre Plangrundlage" },
-          { id: 27, name: "Renderings/Mockups für Kundenpräsentation", zeit: "2–6 h", fehler: "gering", note: "Schilder in Kontextfotos montieren" },
-        ],
+          {
+            id: 24,
+            name: "Produktvisualisierungen (München®, Karlsruhe®, Fire Family®)",
+            zeit: "2–8 h",
+            fehler: "mittel",
+            note: "Mockups, Szenenbilder; zunehmend KI-gestützt"
+          },
+          {
+            id: 25,
+            name: "Werbeanlagen-Visualisierung (Leuchtbuchstaben in Fassade)",
+            zeit: "4–10 h",
+            fehler: "mittel",
+            note: "Compositing oder 3D; Architekturkontext nötig"
+          },
+          {
+            id: 26,
+            name: "Liftlanding-/Treppenhausszenen generieren",
+            zeit: "2–6 h",
+            fehler: "mittel",
+            note: "Oft nur rudimentäre Plangrundlage"
+          },
+          {
+            id: 27,
+            name: "Renderings/Mockups für Kundenpräsentation",
+            zeit: "2–6 h",
+            fehler: "gering",
+            note: "Schilder in Kontextfotos montieren"
+          }
+        ]
       },
       {
         bereich: "F – Präsentation & Kommunikation",
         color: "#3A506B",
         tasks: [
-          { id: 28, name: "Konzeptionsdokument layouten (mehrseitig)", zeit: "8–16 h", fehler: "gering", note: "InDesign; Template vorhanden, aber viel manuell" },
-          { id: 29, name: "Kundenpräsentation vorbereiten", zeit: "2–4 h", fehler: "gering", note: "Slides oder PDF aus Konzeption" },
-          { id: 30, name: "Feedback einarbeiten (Vorkonzept → Konzept)", zeit: "4–12 h", fehler: "mittel", note: "Umfang schwer planbar; Dominoeffekt möglich" },
-          { id: 31, name: "Interne Abstimmung dokumentieren", zeit: "1–2 h", fehler: "gering", note: "E-Mails, Entscheidungen, Protokolle" },
-        ],
+          {
+            id: 28,
+            name: "Konzeptionsdokument layouten (mehrseitig)",
+            zeit: "8–16 h",
+            fehler: "gering",
+            note: "InDesign; Template vorhanden, aber viel manuell"
+          },
+          {
+            id: 29,
+            name: "Kundenpräsentation vorbereiten",
+            zeit: "2–4 h",
+            fehler: "gering",
+            note: "Slides oder PDF aus Konzeption"
+          },
+          {
+            id: 30,
+            name: "Feedback einarbeiten (Vorkonzept → Konzept)",
+            zeit: "4–12 h",
+            fehler: "mittel",
+            note: "Umfang schwer planbar; Dominoeffekt möglich"
+          },
+          {
+            id: 31,
+            name: "Interne Abstimmung dokumentieren",
+            zeit: "1–2 h",
+            fehler: "gering",
+            note: "E-Mails, Entscheidungen, Protokolle"
+          }
+        ]
       },
       {
         bereich: "G – Layout & DTP (intern/Vertrieb)",
         color: "#555B6E",
         tasks: [
-          { id: 32, name: "E-Mail-Signaturen gestalten", zeit: "1–4 h", fehler: "mittel", note: "Saisonal/Aktionsbezogen; HTML-Kompatibilität" },
-          { id: 33, name: "Angebotsvorlagen / Formulare pflegen", zeit: "1–2 h", fehler: "gering", note: "Word/InDesign-Templates" },
-          { id: 34, name: "Portfolio-Broschüren (modular, produktbezogen)", zeit: "4–12 h", fehler: "gering", note: "Regelmäßig aktualisiert" },
-          { id: 35, name: "Social-Media-Assets / Marketingmaterial", zeit: "1–4 h", fehler: "gering", note: "Formate, Textanpassung" },
-        ],
+          {
+            id: 32,
+            name: "E-Mail-Signaturen gestalten",
+            zeit: "1–4 h",
+            fehler: "mittel",
+            note: "Saisonal/Aktionsbezogen; HTML-Kompatibilität"
+          },
+          {
+            id: 33,
+            name: "Angebotsvorlagen / Formulare pflegen",
+            zeit: "1–2 h",
+            fehler: "gering",
+            note: "Word/InDesign-Templates"
+          },
+          {
+            id: 34,
+            name: "Portfolio-Broschüren (modular, produktbezogen)",
+            zeit: "4–12 h",
+            fehler: "gering",
+            note: "Regelmäßig aktualisiert"
+          },
+          {
+            id: 35,
+            name: "Social-Media-Assets / Marketingmaterial",
+            zeit: "1–4 h",
+            fehler: "gering",
+            note: "Formate, Textanpassung"
+          }
+        ]
       },
       {
         bereich: "H – Automatisierung & Prozesse",
         color: "#4A4E69",
         tasks: [
-          { id: 36, name: "Datei-Benennung & Ordnerstrukturen", zeit: "laufend", fehler: "mittel", note: "Kein einheitliches System vorhanden" },
-          { id: 37, name: "Exporte (PDF, PNG, Print-Formate)", zeit: "1–2 h", fehler: "gering", note: "Wiederkehrend; teils manuell" },
-          { id: 38, name: "Vorlagen-Befüllung (Schilder mit wechselnden Inhalten)", zeit: "2–8 h", fehler: "hoch", note: "Mieterwechsel, Raumnummern; fehlerträchtig" },
-          { id: 39, name: "Montage-Dokumentation (Fotos aufbereiten)", zeit: "2–4 h", fehler: "gering", note: "Vorher/Nachher, Projektabschluss" },
-        ],
-      },
+          {
+            id: 36,
+            name: "Datei-Benennung & Ordnerstrukturen",
+            zeit: "laufend",
+            fehler: "mittel",
+            note: "Kein einheitliches System vorhanden"
+          },
+          {
+            id: 37,
+            name: "Exporte (PDF, PNG, Print-Formate)",
+            zeit: "1–2 h",
+            fehler: "gering",
+            note: "Wiederkehrend; teils manuell"
+          },
+          {
+            id: 38,
+            name: "Vorlagen-Befüllung (Schilder mit wechselnden Inhalten)",
+            zeit: "2–8 h",
+            fehler: "hoch",
+            note: "Mieterwechsel, Raumnummern; fehlerträchtig"
+          },
+          {
+            id: 39,
+            name: "Montage-Dokumentation (Fotos aufbereiten)",
+            zeit: "2–4 h",
+            fehler: "gering",
+            note: "Vorher/Nachher, Projektabschluss"
+          }
+        ]
+      }
     ];
 
-    const fehlerColor = { gering: "#2D6A4F", mittel: "#E9A820", hoch: "#AE2012" };
-    const fehlerBg = { gering: "#2D6A4F18", mittel: "#E9A82018", hoch: "#AE201218" };
+    const fehlerColor = {
+      gering: "#2D6A4F",
+      mittel: "#E9A820",
+      hoch: "#AE2012"
+    };
+
+    const fehlerBg = {
+      gering: "#2D6A4F18",
+      mittel: "#E9A82018",
+      hoch: "#AE201218"
+    };
 
     function TaskList() {
       const [expandedBereich, setExpandedBereich] = useState(null);
       const [filter, setFilter] = useState("alle");
 
-      const filtered = data.map((b) => ({
-        ...b,
-        tasks: filter === "alle" ? b.tasks : b.tasks.filter((t) => t.fehler === filter),
-      })).filter((b) => b.tasks.length > 0);
+      const filtered = data
+        .map((b) => ({
+          ...b,
+          tasks: filter === "alle" ? b.tasks : b.tasks.filter((t) => t.fehler === filter)
+        }))
+        .filter((b) => b.tasks.length > 0);
 
-      const totalTasks = data.reduce((s, b) => s + b.tasks.length, 0);
-      const hochCount = data.reduce((s, b) => s + b.tasks.filter(t => t.fehler === "hoch").length, 0);
+      const totalTasks = data.reduce((sum, b) => sum + b.tasks.length, 0);
+      const hochCount = data.reduce(
+        (sum, b) => sum + b.tasks.filter((t) => t.fehler === "hoch").length,
+        0
+      );
 
       return (
-        <div style={{ fontFamily: "'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif", maxWidth: 920, margin: "0 auto", padding: "24px 16px", color: "#1a1a1a", background: "transparent" }}>
+        <div
+          style={{
+            maxWidth: 920,
+            margin: "0 auto",
+            padding: "24px 16px",
+            color: "#1a1a1a",
+            background: "transparent"
+          }}
+        >
           <div style={{ marginBottom: 28 }}>
-            <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, letterSpacing: "-0.02em" }}>
+            <h1
+              style={{
+                fontSize: 22,
+                fontWeight: 700,
+                margin: 0,
+                letterSpacing: "-0.02em"
+              }}
+            >
               Tätigkeitsliste Grafikabteilung
             </h1>
+
             <p style={{ fontSize: 13, opacity: 0.55, margin: "4px 0 16px" }}>
               {totalTasks} Tätigkeiten · {data.length} Bereiche · {hochCount} mit hoher Fehleranfälligkeit
             </p>
@@ -157,10 +436,16 @@
                     fontSize: 12,
                     fontWeight: filter === f ? 600 : 400,
                     cursor: "pointer",
-                    transition: "all 0.15s",
+                    transition: "all 0.15s"
                   }}
                 >
-                  {f === "alle" ? "Alle" : f === "hoch" ? "⚠ Hoch" : f === "mittel" ? "● Mittel" : "✓ Gering"}
+                  {f === "alle"
+                    ? "Alle"
+                    : f === "hoch"
+                    ? "⚠ Hoch"
+                    : f === "mittel"
+                    ? "● Mittel"
+                    : "✓ Gering"}
                 </button>
               ))}
             </div>
@@ -168,6 +453,7 @@
 
           {filtered.map((bereich) => {
             const isOpen = expandedBereich === bereich.bereich;
+
             return (
               <div key={bereich.bereich} style={{ marginBottom: 6 }}>
                 <button
@@ -186,7 +472,7 @@
                     fontSize: 14,
                     fontWeight: 600,
                     transition: "all 0.2s",
-                    letterSpacing: "-0.01em",
+                    letterSpacing: "-0.01em"
                   }}
                 >
                   <span>{bereich.bereich}</span>
@@ -194,48 +480,84 @@
                     {bereich.tasks.length} Tätigkeiten {isOpen ? "▲" : "▼"}
                   </span>
                 </button>
+
                 {isOpen && (
-                  <div style={{
-                    border: `1px solid ${bereich.color}30`,
-                    borderTop: "none",
-                    borderRadius: "0 0 10px 10px",
-                    overflow: "hidden",
-                  }}>
+                  <div
+                    style={{
+                      border: `1px solid ${bereich.color}30`,
+                      borderTop: "none",
+                      borderRadius: "0 0 10px 10px",
+                      overflow: "hidden"
+                    }}
+                  >
                     {bereich.tasks.map((task, i) => (
                       <div
-                        key={task.id}
+                        key={`${bereich.bereich}-${task.id}`}
                         style={{
                           display: "grid",
                           gridTemplateColumns: "1fr 80px 72px",
                           gap: 8,
                           padding: "10px 16px",
                           fontSize: 13,
-                          borderBottom: i < bereich.tasks.length - 1 ? "1px solid #eee" : "none",
+                          borderBottom:
+                            i < bereich.tasks.length - 1 ? "1px solid #eee" : "none",
                           background: i % 2 === 0 ? "transparent" : "#fafafa",
-                          alignItems: "start",
+                          alignItems: "start"
                         }}
                       >
                         <div>
-                          <div style={{ fontWeight: 500, lineHeight: 1.35 }}>{task.name}</div>
-                          <div style={{ fontSize: 11, opacity: 0.5, marginTop: 2, lineHeight: 1.3 }}>{task.note}</div>
+                          <div style={{ fontWeight: 500, lineHeight: 1.35 }}>
+                            {task.name}
+                          </div>
+
+                          <div
+                            style={{
+                              fontSize: 11,
+                              opacity: 0.5,
+                              marginTop: 2,
+                              lineHeight: 1.3
+                            }}
+                          >
+                            {task.note}
+                          </div>
+
                           {task.comw && (
-                           <div style={{ fontSize: 11, opacity: 0.5, marginTop: 2, lineHeight: 1.3 }}>
-                             <strong>Kommentar Wonnie:</strong> {task.comw}
-                           </div>
+                            <div
+                              style={{
+                                fontSize: 11,
+                                opacity: 0.5,
+                                marginTop: 2,
+                                lineHeight: 1.3
+                              }}
+                            >
+                              <strong>Kommentar Wonnie:</strong> {task.comw}
+                            </div>
                           )}
-                        <div style={{ fontSize: 12, fontWeight: 500, opacity: 0.7, whiteSpace: "nowrap" }}>
+                        </div>
+
+                        <div
+                          style={{
+                            fontSize: 12,
+                            fontWeight: 500,
+                            opacity: 0.7,
+                            whiteSpace: "nowrap"
+                          }}
+                        >
                           {task.zeit}
                         </div>
-                        <div style={{
-                          fontSize: 11,
-                          fontWeight: 600,
-                          color: fehlerColor[task.fehler],
-                          background: fehlerBg[task.fehler],
-                          padding: "3px 8px",
-                          borderRadius: 12,
-                          textAlign: "center",
-                          whiteSpace: "nowrap",
-                        }}>
+
+                        <div
+                          style={{
+                            fontSize: 11,
+                            fontWeight: 600,
+                            color: fehlerColor[task.fehler],
+                            background: fehlerBg[task.fehler],
+                            padding: "3px 8px",
+                            borderRadius: 12,
+                            textAlign: "center",
+                            whiteSpace: "nowrap"
+                          }}
+                        >
                           {task.fehler}
                         </div>
                       </div>
@@ -246,9 +568,20 @@
             );
           })}
 
-          <div style={{ marginTop: 24, padding: 16, background: "#f5f5f5", borderRadius: 10, fontSize: 12, opacity: 0.6, lineHeight: 1.5 }}>
-            <strong>Annahmen:</strong> Zeitaufwand = typisches mittleres Projekt (Bürogebäude, 4–6 Etagen, ~50 Schilder).
-            Fehleranfälligkeit = Kombination aus Abhängigkeit von Fremddaten, Änderungshäufigkeit und Produktionsrelevanz.
+          <div
+            style={{
+              marginTop: 24,
+              padding: 16,
+              background: "#f5f5f5",
+              borderRadius: 10,
+              fontSize: 12,
+              opacity: 0.6,
+              lineHeight: 1.5
+            }}
+          >
+            <strong>Annahmen:</strong> Zeitaufwand = typisches mittleres Projekt
+            (Bürogebäude, 4–6 Etagen, ~50 Schilder). Fehleranfälligkeit = Kombination
+            aus Abhängigkeit von Fremddaten, Änderungshäufigkeit und Produktionsrelevanz.
             Werte sind Schätzungen – bitte gemeinsam validieren.
           </div>
         </div>
